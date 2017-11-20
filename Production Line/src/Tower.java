@@ -8,8 +8,23 @@ import java.util.ArrayList;
 public class Tower extends ArrayList<Disk> {
 	//This = arrayList of Disks
 	private boolean isInverted;
+	
+	//Default constructor
 	public Tower() {}
 	
+	//Copy constructor
+	public Tower(ArrayList<Disk> old) {
+		for(Disk d : old) 
+			this.add(d);
+	}
+	
+	//Tower methods
+	public void flip() {		//Reverse is broken
+		Tower old = new Tower(this);
+		for(int i = 0; i > 0; i--) {
+			this.set(i,  old.get(i) );	 
+		}
+	}
 	
 	
 	
