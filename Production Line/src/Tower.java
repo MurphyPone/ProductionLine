@@ -1,48 +1,58 @@
-import java.util.ArrayList;
-
 /**
  * @author MurphyP1
  *
  */
+import java.util.ArrayList;
+//import java.util.Stack;
 
 public class Tower extends ArrayList<Disk> {
 	//This = arrayList of Disks
 	private boolean isInverted;
 	
 	//Default constructor
-	public Tower() {}
+	public Tower() {
+		super();
+	}
 	
 	//Copy constructor
-	public Tower(ArrayList<Disk> old) {
+	public Tower(ArrayList<Disk> old) {	//Is this allowed?
 		for(Disk d : old) 
 			this.add(d);
 	}
 	
 	//Tower methods
-	public void flip() {		//Reverse is broken
-		Tower old = new Tower(this);
-		for(int i = 0; i > 0; i--) {
-			this.set(i,  old.get(i) );	 
-		}
+	public Tower flip() {		//Reverse is broken
+		Tower result = new Tower();
+		while(!(peek() == null) )
+			result.push(pop());
+		return result;
+		//inverted = true
 	}
 	
+	public String toString() {
+		String result = "";
+		Tower copy = new Tower(this);	//Have to copy tower to print other wise pop will make it empty
+		while(!(copy.peek() == null) )  
+				result += copy.pop() + "\n";
+		return result;
+	}
 	
-	
-	
-	//Stack implementation
-	public boolean isEmpty() {
+	/*Stack implementations*/
+	public boolean isEmpty() {	//Unnecessary 
 		return this.isEmpty();
 	}
 	
-	public void push(Disk x) {
+	public void push(Disk x) {	//Alias for add
 		this.add(x);
 	}
-		//TODO IK THAT THE USE OF "this." IS UNNECESSARY, BUT DOES THIS COUNT AS IMPLEMENTING AS A STACK
+
 	public Disk pop() {
 		return this.remove(this.size() -1);	//Returns the top object and removes from the stack
 	}
 	
-	public Disk peek() {
-		return (this.get(this.size() - 1));
+	public Disk peek() {	//.get(last)
+		if(size() > 0)
+			return (this.get(this.size() - 1));
+		else return null;
 	}
 }
