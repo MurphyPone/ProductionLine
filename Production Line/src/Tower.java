@@ -2,13 +2,9 @@
  * @author MurphyP1
  *
  */
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class Tower extends Stack<Disk>{
-	//This = arrayList of Disks
-	private boolean isInverted;
-	
 	//Default constructor
 	public Tower() {
 		super();
@@ -19,7 +15,7 @@ public class Tower extends Stack<Disk>{
 		this.addAll(old);
 	}
 	
-	//Tower methods
+	//Tower methods	//BOT NECESSARY?
 	public Tower flip() {		//Reverse is broken
 		Tower result = new Tower();
 		while(!(peek() == null) )
@@ -30,9 +26,9 @@ public class Tower extends Stack<Disk>{
 	
 	//TODO TODO TODO REMOVE THIS BEFORE TURNING IN 
 	public String toString() {
-		String result = "";
+		String result = "\n";
 		Tower copy = new Tower(this);	//Have to copy tower to print other wise pop will make it empty
-		while(!(copy.peek() == null) )  
+		while(!(copy.isEmpty()) )  
 				result += copy.pop() + "\n";
 		return result;
 	}

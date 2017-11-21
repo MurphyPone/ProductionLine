@@ -11,7 +11,7 @@ public class Disk implements Comparable<Disk> {
 	
 	//Default constructor which picks a random radius 1,10
 	public Disk() {
-		radius = (int) (Math.random()*(10-1))+1;
+		radius = (int) (Math.random()*(100-1))+1;
 	}
 	
 	//Constructor with Arguments
