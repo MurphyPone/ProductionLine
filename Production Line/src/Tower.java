@@ -3,9 +3,9 @@
  *
  */
 import java.util.ArrayList;
-//import java.util.Stack;
+import java.util.Stack;
 
-public class Tower extends ArrayList<Disk> {
+public class Tower extends Stack<Disk>{
 	//This = arrayList of Disks
 	private boolean isInverted;
 	
@@ -14,10 +14,9 @@ public class Tower extends ArrayList<Disk> {
 		super();
 	}
 	
-	//Copy constructor
-	public Tower(ArrayList<Disk> old) {	//Is this allowed?
-		for(Disk d : old) 
-			this.add(d);
+	//Copy constructor	
+	public Tower(Tower old) {	
+		this.addAll(old);
 	}
 	
 	//Tower methods
@@ -29,6 +28,7 @@ public class Tower extends ArrayList<Disk> {
 		//inverted = true
 	}
 	
+	//TODO TODO TODO REMOVE THIS BEFORE TURNING IN 
 	public String toString() {
 		String result = "";
 		Tower copy = new Tower(this);	//Have to copy tower to print other wise pop will make it empty
@@ -37,15 +37,7 @@ public class Tower extends ArrayList<Disk> {
 		return result;
 	}
 	
-	/*Stack implementations*/
-	public boolean isEmpty() {	//Unnecessary 
-		return this.isEmpty();
-	}
-	
-	public void push(Disk x) {	//Alias for add
-		this.add(x);
-	}
-
+	/*Stack implementations*/ //TODO are these even necessary?
 	public Disk pop() {
 		return this.remove(this.size() -1);	//Returns the top object and removes from the stack
 	}
