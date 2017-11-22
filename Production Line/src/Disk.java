@@ -1,8 +1,4 @@
 /**
- * 
- */
-
-/**
  * @author MurphyP1
  *
  */
@@ -11,12 +7,15 @@ public class Disk implements Comparable<Disk> {
 	
 	//Default constructor which picks a random radius 1,10
 	public Disk() {
-		radius = (int) (Math.random()*(100-1))+1;
+		radius = (int) (Math.random()*(10-1))+1;
 	}
 	
 	//Constructor with Arguments
 	public Disk(int r) {
-		radius = r;
+		if(r > 0) //No negative radii, yo
+			radius = r;	
+		else 
+			radius = (int) (Math.random()*(10-1))+1;
 	}
 	
 	//Getter
@@ -29,7 +28,7 @@ public class Disk implements Comparable<Disk> {
 	}
 	
 	@Override
-	public int compareTo(Disk arg0) {	//TODO need to use object and instanceof ? or only in Comparators?
+	public int compareTo(Disk arg0) {
 		if(radius > arg0.getRadius()) 
 			return (radius - arg0.getRadius() );	//1
 		else if(radius < arg0.getRadius()) 
