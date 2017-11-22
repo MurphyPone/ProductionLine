@@ -69,8 +69,8 @@ public class ProductionLine {
 		while(!(up.isEmpty()) ) {
 			for(int i = 0; i < up.peek().getRadius(); i++)
 				//for(int k = 0; k < base/2 - up.peek().getRadius()/2; k++)	//Spaces
-				//	result += " "; 
-				result += "*";
+					//result += " "; 
+				result += "* ";
 				
 			result += "\n";
 			up.pop();//Move to next disk
