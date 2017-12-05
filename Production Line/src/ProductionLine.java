@@ -110,6 +110,7 @@ public class ProductionLine {
 			
 			System.out.print(result);
 		}
+		System.out.println("--------------END OF THE LINE--------------");
 	}
 	
 	/**
@@ -168,14 +169,16 @@ public class ProductionLine {
 		System.out.print("GYZA'S FINEST SAND STACKS");
 		ProductionLine pyramids = new ProductionLine();
 		
-		pyramids.addDisk(null);
+		pyramids.process();	//process an empty line
+		pyramids.log();	
+		pyramids.addDisk(new Disk(5));
 		pyramids.process();
 		pyramids.log();
 		
-		for(int i = 0; i < 100; i ++)
+		for(int i = 0; i < 10; i++)
 			pyramids.addDisk(new Disk() );
 		
-		pyramids.process();	//TODO fix why can't this process twice??
+		pyramids.process();	
 		pyramids.log();
 		
 	/*Third Test, with intent to break*/
