@@ -173,11 +173,13 @@ public class ProductionLine {
 		pyramids.log();	
 		pyramids.addDisk(new Disk(5));
 		pyramids.process();
+		System.out.println("Pre-disk...");
 		pyramids.log();
 		
 		for(int i = 0; i < 10; i++)
 			pyramids.addDisk(new Disk() );
 		
+		System.out.println("Adding more disks..");
 		pyramids.process();	
 		pyramids.log();
 		
