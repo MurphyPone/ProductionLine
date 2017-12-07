@@ -64,7 +64,7 @@ public class Disk implements Comparable<Disk> {
 	 * 
 	 * @author MurphyP1
 	 * @date 11/15/17
-	 * @method toString
+	 * @method compareToDisk
 	 * 
 	 * @param arg0 a Disk which is compared to the self Disk
 	 * 

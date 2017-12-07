@@ -24,6 +24,8 @@ public class Tower extends Stack<Disk> {
 	 * @author MurphyP1
 	 * @date 11/15/17
 	 * @method Tower
+	 * 
+	 * @param old the Tower to be copied
 	 */	
 	public Tower(Tower old) {	
 		this.addAll(old);

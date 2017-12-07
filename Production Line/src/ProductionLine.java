@@ -69,7 +69,7 @@ public class ProductionLine {
 	public void process() {
 		Tower dump;	//declares dump to be re-used throughout the process 
 		
-		while(!(input.peek() == null) )	{//While the input has disks
+		while(!(input.isEmpty()) )	{//While the input has disks
 			if( !(robot.isEmpty()) && input.peek().getRadius() < robot.peek().getRadius() ) {	//if the next disk is smaller than the robot arm
 				dump = unloadRobot();
 				output.add(dump);	//Add the new tower to the output queue
@@ -173,7 +173,7 @@ public class ProductionLine {
 		pyramids.log();	
 		pyramids.addDisk(new Disk(5));
 		pyramids.process();
-		System.out.println("Pre-disk...");
+		//System.out.println("Pre-disk...");
 		pyramids.log();
 		
 		for(int i = 0; i < 10; i++)
